@@ -31,7 +31,7 @@ In the future these variables will change over time with the use of React state 
 
 8. The next step is to show the user how many times each song has been played. Create a new component called `PlayCounts` and render it underneath your `Songs`. This component should show the user how many times each song has been played according to the `playCounts` variable.
 
-**nb** Although there are exactly 3 songs in this hard coded example you should account for the possibility that more songs could be added later. Make sure that your component will render the counts regardless of how many keys the `playCounts` object contains.
+**nb** Although there are exactly 4 songs in this hard coded example you should account for the possibility that more songs could be added later. Make sure that your component will render the counts regardless of how many keys the `playCounts` object contains.
 
 9. Add a total to your `PlayCounts` telling the user how many tracks have be played in total.
 
