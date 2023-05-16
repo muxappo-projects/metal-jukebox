@@ -5,7 +5,7 @@
 Welcome to React and your very own Jukebox. To get up and running with this repo:
 
 - run `npm install` to install `react`, `react-dom`, `react-scripts` and their dependencies. (They are quite large and this may take a few minutes. You can ignore any vulnerability warnings from npm for now and don't run any `npm audit` commands as they may break the app.)
-- run `npm start` to serve the app on `localhost:3000`
+- run `npm run dev` to serve the app, by default this should be `localhost:3000`. However your terminal will tell you which network port the app is running on.
 
 This repo has some hard coded data and css classes setup for you to work with in order to setup your jukebox.
 
