@@ -43,7 +43,7 @@ In the future these variables will change over time with the use of React state 
 
 12. Your Jukebox is going to start accepting cash to allow users to play the songs. Your Jukebox will start with £0 and users can click a button to add £1 to the balance.
 
-In order for the current total to be dynamic our component is going to need some `state`. Take a look at the [React Docs](https://react.dev/reference/react/useState) on the `useState hook` and research how to keep the number of likes you've received in state.
+In order for the current total to be dynamic our component is going to need some `state`. Take a look at the [React Docs](https://react.dev/reference/react/useState) on the `useState hook` and research how to keep the cash you've received in state.
 
 Time to add some cash to the total. When the user clicks on the button increase the amount of cash currently available by £1. The user should be able to click this button as many times as they like 👍.
 
