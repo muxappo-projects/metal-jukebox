@@ -1,5 +1,11 @@
+import Header, { SubHeader } from "./components/Headers.jsx";
+import Songs, { SongPreview } from "./components/Songs.jsx";
+import IncreaseBalance from "./components/Buttons.jsx";
+
 const App = () => {
-  const playListTitle = "Headbangers";
+  const balance = 0;
+  const playListTitle = "Headbangers Jukebox";
+  const songListTitle = "Available tracks";
   const songs = [
     {
       id: 1,
@@ -48,48 +54,27 @@ const App = () => {
     Deathwalker: 8,
     "Together We Rise": 11,
   };
-  const currentlyPlaying = "Together We Rise";
+  const totalPlays = Object.values(playCounts).reduce(
+    (accum, currVal) => accum + currVal
+  );
+  const currentlyPlaying = "Coming of the Tide";
 
   return (
     <div className="App">
       <Header title={playListTitle} />
-      <Songs songs={songs} currentSong={currentlyPlaying} plays={playCounts} />
+      <SongPreview songTitle={currentlyPlaying} songList={songs} />
+
+      <IncreaseBalance coinBalance={balance} />
+
+      <SubHeader title={songListTitle} />
+      <Songs
+        songs={songs}
+        currentSong={currentlyPlaying}
+        plays={playCounts}
+        total={totalPlays}
+      />
     </div>
   );
 };
-
-// Create your new Components here
-function Header({ title }) {
-  return <h1>{title}</h1>;
-}
-
-function Songs({ songs, currentSong, plays }) {
-  return (
-    <div>
-      <ol className="song-list">
-        {songs.map((song) => {
-          return (
-            <li className="song-item" key={song.id}>
-              <h2>{song.title}</h2>
-              <h3>{song.artist}</h3>
-              <p>{song.album}</p>
-              <img
-                className="song-img"
-                src={song.albumCover}
-                alt={`Album cover for ${song.album}`}
-              />
-              <PlayCounts song={song.title} plays={plays} />
-            </li>
-          );
-        })}
-      </ol>
-      <p className="song-current">Currently playing: {currentSong}</p>
-    </div>
-  );
-}
-
-function PlayCounts({ song, plays }) {
-  return <p>Total plays: {plays[song]}</p>;
-}
 
 export { App, Header };
