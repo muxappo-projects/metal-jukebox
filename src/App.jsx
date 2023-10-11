@@ -1,58 +1,95 @@
 const App = () => {
-  const playListTitle = 'My cool playlist';
+  const playListTitle = "Headbangers";
   const songs = [
     {
       id: 1,
-      title: 'Dreams',
-      artist: 'Fleetwood Mac',
+      title: "Coming of the Tide",
+      album: "Deceiver of the Gods",
+      artist: "Amon Amarth",
       albumCover:
-        'https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG',
+        "https://upload.wikimedia.org/wikipedia/en/2/2f/DeceiveroftheGodsAmonAmarth.jpg",
       previewURL:
-        'https://open.spotify.com/embed/track/0ofHAoxe9vBkTCp2UQIavz?utm_source=generator',
+        "https://open.spotify.com/embed/track/5lxwA7AdXjESdJx3gmQdVT?utm_source=generator",
     },
     {
       id: 2,
-      title: "Don't stop me now",
-      artist: 'Queen',
+      title: "Together We Rise",
+      album: "Warfront",
+      artist: "Wind Rose",
       albumCover:
-        'https://upload.wikimedia.org/wikipedia/en/9/97/Queen-dont-stop-me-now-1979-6-s.jpg',
+        "https://m.media-amazon.com/images/I/81Hpza0UR4L._UF894,1000_QL80_.jpg",
       previewURL:
-        'https://open.spotify.com/embed/track/5T8EDUDqKcs6OSOwEsfqG7?utm_source=generator',
+        "https://open.spotify.com/embed/track/1OMplIvNpCVCYirUTXF07d?utm_source=generator",
     },
     {
       id: 3,
-      title: 'Enter Sandman',
-      artist: 'Metallica',
+      title: "Chomp Chomp",
+      album: "Curse of the Crystal Coconut",
+      artist: "Alestorm",
       albumCover:
-        'https://upload.wikimedia.org/wikipedia/en/2/2c/Metallica_-_Metallica_cover.jpg',
+        "https://upload.wikimedia.org/wikipedia/en/7/70/Alestorm_Curse_of_the_Crystal_Coconut_Cover_Art_2020.jpg",
       previewURL:
-        'https://open.spotify.com/embed/track/5sICkBXVmaCQk5aISGR3x1?utm_source=generator',
+        "https://open.spotify.com/embed/track/0YkxwqZXz8kUyDfobm7K4F?utm_source=generator",
     },
     {
       id: 4,
-      title: 'Sledgehammer',
-      artist: 'Peter Gabriel',
+      title: "Deathwalker",
+      album: "Ategnatos",
+      artist: "Eluveitie",
       albumCover:
-        'https://upload.wikimedia.org/wikipedia/en/c/cf/Sledgehammer_Cover.jpg',
+        "https://upload.wikimedia.org/wikipedia/en/a/ad/Eluveitie_-_Ategnatos_2019.jpg",
       previewURL:
-        'https://open.spotify.com/embed/track/029NqmIySn1kOY305AAhxT?utm_source=generator',
+        "https://open.spotify.com/embed/track/6axXEeY3z8blSGSvfTgGFq?utm_source=generator",
     },
   ];
   const playCounts = {
-    Dreams: 10,
-    'Enter Sandman': 5,
-    "Don't stop me now": 8,
-    Sledgehammer: 11,
+    "Coming of the Tide": 10,
+    "Chomp Chomp": 5,
+    Deathwalker: 8,
+    "Together We Rise": 11,
   };
-  const currentlyPlaying = "Don't stop me now";
+  const currentlyPlaying = "Together We Rise";
 
   return (
     <div className="App">
-      <h1>React Intro</h1>
+      <Header title={playListTitle} />
+      <Songs songs={songs} currentSong={currentlyPlaying} plays={playCounts} />
     </div>
   );
 };
 
-export default App;
-
 // Create your new Components here
+function Header({ title }) {
+  return <h1>{title}</h1>;
+}
+
+function Songs({ songs, currentSong, plays }) {
+  return (
+    <div>
+      <ol className="song-list">
+        {songs.map((song) => {
+          return (
+            <li className="song-item" key={song.id}>
+              <h2>{song.title}</h2>
+              <h3>{song.artist}</h3>
+              <p>{song.album}</p>
+              <img
+                className="song-img"
+                src={song.albumCover}
+                alt={`Album cover for ${song.album}`}
+              />
+              <PlayCounts song={song.title} plays={plays} />
+            </li>
+          );
+        })}
+      </ol>
+      <p className="song-current">Currently playing: {currentSong}</p>
+    </div>
+  );
+}
+
+function PlayCounts({ song, plays }) {
+  return <p>Total plays: {plays[song]}</p>;
+}
+
+export { App, Header };

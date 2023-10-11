@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Zilla Slab', serif;
-  background-color: #fbeaff;
+  font-family: "Zilla Slab", serif;
+  background-color: #303030;
 }
 
 .App {
   text-align: center;
-  color: #845ec2;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -19,7 +19,7 @@ button {
   padding: 0.4em 1em;
   border-radius: 10px;
   border: none;
-  font-family: 'Zilla Slab', serif;
+  font-family: "Zilla Slab", serif;
   font-size: 1rem;
 }
 
@@ -36,21 +36,40 @@ button:disabled {
 }
 
 .song-item {
-  margin: 1em;
-  padding: 1em;
+  margin: 0.5em;
+  padding: 0.5em;
   border-radius: 5px;
 }
 
 .song-item > h2 {
   margin: 0;
+  color: #ffffff;
+}
+
+.song-item > h3 {
+  margin: 0;
+  color: #b3afaf;
+}
+
+.song-item > p {
+  color: #ffffff;
 }
 
 .song-img {
-  width: 10em;
-  height: 10em;
+  width: 15em;
+  height: 15em;
   object-fit: cover;
+  border-radius: 5%;
 }
 
 .song-current {
-  box-shadow: 0px 0px 8px 2px #00c9a7;
+  box-shadow: 0px 0px 8px 2px #c3e6e0;
+  border: none;
+  width: 25%;
+  margin: auto;
+}
+
+.play-list {
+  display: grid;
+  align-self: auto;
 }
