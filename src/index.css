@@ -31,7 +31,6 @@ button {
   padding: 0.4em 1em;
   border-radius: 10px;
   border: none;
-  outline: none;
   font-size: 1rem;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -49,9 +48,6 @@ button:active {
 
 button:disabled {
   background: #545454;
-}
-
-.credit-count {
 }
 
 .song-list-header {
