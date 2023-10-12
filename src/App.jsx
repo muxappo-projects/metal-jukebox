@@ -3,7 +3,6 @@ import Songs, { SongPreview } from "./components/Songs.jsx";
 import IncreaseBalance from "./components/Buttons.jsx";
 
 const App = () => {
-  const balance = 0;
   const playListTitle = "Headbangers Jukebox";
   const songListTitle = "Available tracks";
   const songs = [
@@ -64,7 +63,7 @@ const App = () => {
       <Header title={playListTitle} />
       <SongPreview songTitle={currentlyPlaying} songList={songs} />
 
-      <IncreaseBalance coinBalance={balance} />
+      <IncreaseBalance coinBalance={0} />
 
       <SubHeader title={songListTitle} />
       <Songs
