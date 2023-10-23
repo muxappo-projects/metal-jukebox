@@ -20,7 +20,7 @@ body {
   font-size: 64px;
 }
 
-/* ----v button settings v---- */
+/* ----button settings---- */
 .button-wrapper {
   margin-top: 30px;
 }
@@ -49,9 +49,9 @@ button:active {
 button:disabled {
   background: #545454;
 }
-/* ----^ button settings ^---- */
+/* ----------------------- */
 
-/* -----v song list settings v----- */
+/* ---song list settings--- */
 .song-list-header {
   background-color: #535353;
   box-shadow: 0px 0px 8px 2px #535353;
@@ -103,25 +103,25 @@ button:disabled {
 .total-plays {
   font-size: 1.4rem;
 }
-/* -----^ song list settings ^----- */
+/* ------------------------ */
 
-/* ---v currently playing settings v--- */
+/* ---currently playing settings--- */
 .curr-song-container {
   font-size: 1.9rem;
-  height: 13rem;
+  height: 10rem;
   width: 40rem;
   padding: 0.3%;
 }
 
 .preview {
   border-radius: 12px;
-  height: 10rem;
+  height: 7.5rem;
   width: 30rem;
   border: none;
 }
-/* ---^ currently playing settings ^--- */
+/* ------------------------- */
 
-/* ---v smaller screen settings v--- */
+/* ---smaller screen settings--- */
 @media screen and (max-width: 500px) {
   .header {
     font-size: 40px;
@@ -141,4 +141,4 @@ button:disabled {
     border: none;
   }
 }
-/* ---^ smaller screen settings ^--- */
+/* ----------------------------- */
